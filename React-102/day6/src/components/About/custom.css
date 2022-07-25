@@ -1,0 +1,31 @@
+.about{
+    min-height: 700px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.about_left{
+    width:100%;
+    color:gray;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about_text{
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+}
+.hero_right{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
