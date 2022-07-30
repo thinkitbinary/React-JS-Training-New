@@ -16,11 +16,11 @@ const App = () => { // functional component
     <div>
         <Navbar brandName="Our Store" />
         {/* <ProductNextApi /> */}
-        <ProductsApi />
+        {/* <ProductsApi /> */}
         {/* <Lifecycle /> */}
         {/* <Todo /> */}
         {/* <ListRendering /> */}
-        {/* <Counter /> */}
+        <Counter />
         {/* <Hero name="Hero"/>
       <About name="About Me"/> */}
         <Footer />

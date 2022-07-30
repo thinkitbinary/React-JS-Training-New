@@ -1,0 +1,25 @@
+.hero{
+    min-height: 700px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.hero_left{
+    width:100%;
+    color:gray;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero_right{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
