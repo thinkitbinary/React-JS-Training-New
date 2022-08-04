@@ -1,0 +1,5 @@
+{
+    "todos": [
+        { "id":1, "activityName": "Coding", "targetDate": "22/08/22", "completed": false}
+    ]
+}
