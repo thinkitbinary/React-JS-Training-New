@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './styles'
 import { useSelector, useDispatch } from 'react-redux/es/exports'
-import { addTodo, addTodoAsync, deleteTodo, getTodo, getTodoAsync, updateTodo } from '../../features/todos/todosSlice'
+import { addTodo, deleteTodo, updateTodo } from '../../features/todos/todosSlice'
 
 const initialActivityData = { activityName: "", targetDate: "", completed: false }
 
-const TodosApi = () => {
+const Todos = () => {
     const [activity, setActivity] = useState(initialActivityData) // ActivityState
     // const [todos, setTodos] = useState([])  // todos state
 
@@ -43,11 +43,6 @@ const TodosApi = () => {
         // setTodos([..._todos])
     }
 
-    useEffect(()=>{
-        // dispatch(getTodo())
-        dispatch(getTodoAsync())
-    },[])
-
     return (
         <div style={styles.counter}>
             <h2>ToDo Application</h2>
@@ -80,4 +75,4 @@ const TodosApi = () => {
     )
 }
 
-export default TodosApi
+export default Todos

@@ -1,21 +1,31 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-// const fetchApiAsync = async () => {
-//     let apiRes = []
-//     await fetch("http://localhost:3001/users")
-//         .then(res => res.json())
-//         .then(data => apiRes = data)
-//     return apiRes
-// }
-
 export const getTodoAsync = createAsyncThunk(
     'todos/getTodoAsync',
-    async (obj, {}) => {
+    async (obj, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
         const response = await fetch("http://localhost:3001/todos")
         const data = await response.json()
         return data
     }
 )
+
+// export const addTodoAsync = createAsyncThunk(
+//     'todos/addTodoAsync',
+//     async (todo, { dispatch, getState, rejectWithValue, fulfillWithValue }) => {
+//         let curTodo = getState().todos.data
+//         let res = await fetch("http://localhost:3001/todos", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(todo)
+//         }).then(
+//             res => res.json()
+//         )
+//         let resultTodo = [...curTodo,res]
+//         return resultTodo
+//     }
+// )
 
 const initialState = {
     data: [],
@@ -41,17 +51,27 @@ export const todosSlice = createSlice({
             state.data = [...action.payload] // updating with new array 
         }
     },
-    extraReducers:{
-        [getTodoAsync.pending]: (state, action) =>{  //todos/getTodoAsync/pending
+    extraReducers: {
+        [getTodoAsync.pending]: (state, action) => {  //todos/getTodoAsync/pending
             console.log("loading")
         },
-        [getTodoAsync.fulfilled]: (state, action) =>{
+        [getTodoAsync.fulfilled]: (state, action) => {
             console.log("fulfilled")
             state.data = action.payload
         },
-        [getTodoAsync.rejected]: (state, action) =>{
+        [getTodoAsync.rejected]: (state, action) => {
             console.log("rejected")
         },
+        // [addTodoAsync.pending]: (state, action) => { 
+        //     console.log("loading")
+        // },
+        // [addTodoAsync.fulfilled]: (state, action) => {
+        //     console.log("fulfilled")
+        //     state.data = action.payload
+        // },
+        // [addTodoAsync.rejected]: (state, action) => {
+        //     console.log("rejected")
+        // },
     }
 })
 
